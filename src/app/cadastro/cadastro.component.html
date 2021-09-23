@@ -4,12 +4,60 @@
 </h1>
 
 <br><br>
-
-<div class="text-center">
-    <div class="btn-group" role="group" aria-label="Exemplo básico">
-        <a href="./preenchendo.html" role=button type="button" class="btn btn-primary">Criar Cadastro</a>
-            <button type="button" class="btn btn-primary">Alterar</button>
-            <button type="button" class="btn btn-primary">Excluir</button>
-            <button type="button" class="btn btn-primary">Procurar</button>
+<div class="container">
+    <div class="d-flex justify-content-between">
+        <div style="width: 20%;">
+            <label>Id</label>
+            <input disabled class="form-control" type="text" id="usuario" placeholder="O ID é automático">
+        </div>
+        <div style="width: 78%;">
+            <label>Nome</label>
+            <input [disabled]="desabilitarCamposCadastro" class="form-control" type="text" id="usuario" placeholder="Digite o Nome">
+        </div>
+    </div>    
+    <div class="d-flex justify-content-between">
+        <div style="width: 50%;">
+            <label>Endereço</label>
+            <input [disabled]="desabilitarCamposCadastro" class="form-control" type="text" id="usuario" placeholder="Digite um Endereço">
+        </div>
+        <div style="width: 48%;">
+            <label>Cidade</label>
+            <input [disabled]="desabilitarCamposCadastro" class="form-control" type="text" id="usuario" placeholder="Digite sua Cidade">
+        </div>
     </div>
-</div>
+    <div class="d-flex justify-content-between">
+        <div style="width: 50%;">
+            <label>Bairro</label>
+            <input [disabled]="desabilitarCamposCadastro" class="form-control" type="text" id="usuario" placeholder="Digite seu Bairro">
+        </div>
+        <div style="width: 28%;">
+            <label>Cep</label>
+            <input [disabled]="desabilitarCamposCadastro" class="form-control" type="number" id="usuario" placeholder="Digite seu CEP">
+        </div>
+        <div style="width: 18%;">
+            <label>Telefone</label>
+            <input [disabled]="desabilitarCamposCadastro" class="form-control" type="number" id="usuario" placeholder="Digite seu Telefone">
+        </div>
+    </div>
+<br><br>   
+ 
+    <div class="d-flex container mt-5 p-3" style="background-color: rgba(10, 88, 202, 0.2);" role="group" aria-label="Exemplo básico">
+        <div class="p-2"><button class="btn btn-primary btn-block" (click)="novo()" [hidden]="esconderBotaoNovo">Novo</button>
+        </div>
+        <div class="p-2"><button class="btn btn-primary btn-block" (click)="alterar()"
+                [hidden]="esconderBotaoAlterar">Alterar</button></div>
+        <div class="p-2"><a href="../app.component.html" class="btn btn-primary btn-block" (click)="excluir()"
+                [hidden]="esconderBotaoExcluir">Excluir</a></div>
+        <div class="p-2"><button class="btn btn-primary btn-block" (click)="procurarOpcao()"
+                [hidden]="esconderBotaoProcurar">Procurar</button></div>
+        <div class="p-2"><button class="btn btn-primary btn-block" (click)="gravar()"
+                [hidden]="esconderBotaoGravar">Gravar</button></div>
+        <div class="p-2"><a href="../app.component.html" class="btn btn-primary btn-block" (click)="gravar()"
+                [hidden]="esconderBotaoConfirmarExclusao">Você tem certeza de excluir este registro?</a></div>
+        <div class="p-2"><a href="../app.component.html" class="btn btn-primary btn-block" (click)="cancelar()"
+                [hidden]="esconderBotaoCancelar">Cancelar</a></div>
+        <div class="p-2 col-5"><input type="procurar" class="form-control" id="procurarInput" [hidden]="esconderCampoProcura"
+                placeholder="Digite um nome a ser procurado"></div>
+        <div class="p-2"><a href="../app.component.html" class="btn btn-primary btn-block" (click)="procurarAcao()"
+                [hidden]="esconderBotaoProcurarAcao">Procurar</a></div>
+    </div>
